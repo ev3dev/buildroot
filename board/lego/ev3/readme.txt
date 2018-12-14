@@ -70,6 +70,13 @@ official Lego Mindstorms EV3 programming software firmware update tool to load
 the image. To use sdcard.img, use a disk writing tool such as Etcher or dd to
 write the image to the µSD card.
 
+NOTE: The sdcard.img created by lego_ev3_defconfig won't boot if the official
+LEGO firmware is installed on the EV3 (it has an old version of U-Boot that
+doesn't know about device tree). You must either set the kernel configuration
+option to append the device tree to the kernel or you can create a boot.scr
+that chainloads a newer U-Boot or you can install a newer U-Boot in the flash
+memory (just flashing u-boot.bin is enough).
+
 Finish
 ======
 
